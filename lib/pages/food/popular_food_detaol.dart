@@ -4,6 +4,7 @@ import 'package:food_delivery/utils/dimansions.dart';
 import 'package:food_delivery/widgets/app_column.dart';
 import 'package:food_delivery/widgets/app_icon.dart';
 import 'package:food_delivery/widgets/big_text.dart';
+import 'package:food_delivery/widgets/expandable_text_widget.dart';
 
 class PopularFoodDetail extends StatelessWidget {
   const PopularFoodDetail({Key? key}) : super(key: key);
@@ -14,6 +15,7 @@ class PopularFoodDetail extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Stack(
         children: [
+          // background Image
           Positioned(
             left: 0,
             right: 0,
@@ -30,6 +32,7 @@ class PopularFoodDetail extends StatelessWidget {
               ),
             ),
           ),
+          // icon Widgets
           Positioned(
             top: Dimensions.height45,
             left: Dimensions.width20,
@@ -42,6 +45,7 @@ class PopularFoodDetail extends StatelessWidget {
               ],
             ),
           ),
+          // introduction of food
           Positioned(
             left: 0,
             right: 0,
@@ -63,17 +67,27 @@ class PopularFoodDetail extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  AppColumn(text: "Chinese side"),
+                  const AppColumn(text: "Chinese side"),
                   SizedBox(height: Dimensions.height20),
-                  BigText(text: "Introduce")
+                  BigText(text: "Introduce"),
+                  SizedBox(height: Dimensions.height20),
+                  Expanded(
+                    child: SingleChildScrollView(
+                      child: ExpandableTextWidget(
+                        text:
+                            "this is New UI , this is New UI , this is New UI , this is New UI , this is New UI , this is New UI , this is New UI ,this is New UI , this is New UI ,this is New UI , this is New UI , this is New UI , this is New UI , this is New UI , this is New UI , this is New UI , this is New UI , this is New UI , this is New UI , this is New UI ,this is New UI , this is New UI ,this is New UI , this is New UI , this is New UI , this is New UI , this is New UI , this is New UI , this is New UI , this is New UI , this is New UI , this is New UI , this is New UI ,this is New UI , this is New UI ,this is New UI , this is New UI , this is New UI , this is New UI , ",
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
           ),
+          //Expandable Text
         ],
       ),
       bottomNavigationBar: Container(
-        height: 120,
+        height: Dimensions.bottomHeightBar,
         padding: EdgeInsets.only(
           top: Dimensions.height30,
           bottom: Dimensions.height30,
